@@ -1,21 +1,21 @@
 # cStrafe UI by CS2Kitchen
 
-This is the second project in this domain. I made this so it could be more simplified and not too confusing like the previous version.This is a lightweight training tool to help players practice  counterstrafing mechanics in CS2. It listens to your movement keys (W, A, S and D) and the left mouse button to decide whether you fired while coming to a full stop, started moving the other way or were still overlapping directions.
+This is a lightweight training tool to help players practice counterstrafing mechanics in CS2. It reads your movement keys (W, A, S and D) and the left mouse button to decide whether you fired while coming to a full stop, started moving the other way or were still overlapping directions.
 
 ![UI Preview](images/strafe_ui_2.gif)
 
 
 ## Installation
 
-1. Make sure you have a recent Python installed. ( Install 3.13 from microsoft store if you get into issues)
+1. Make sure you have a recent version of Python installed. (Install Python 3.13 from the Microsoft store if you are experiencing issues.)
 
-2. Download or clone this repository
+2. Download or clone this repository.
 
 3. Run build_cStrafe.bat to download the required packages and make the executable.
 
 ## Usage
 
-When the application is running, an overlay appears on top of your game window. It updates whenever you fire the left mouse button. You can drag it to any part of screen. Make sure to run your game in fullscreen windowed(won't work in fullscreen). You can control the overlay with a few simple keys:
+When the application is running, an overlay appears on top of your game window. It updates whenever you fire the left mouse button. You can drag it to any part of screen. Make sure to run your game in fullscreen windowed (won't work in fullscreen). You can control the overlay with a few simple keys:
 
 - **F6** – hide or show the overlay without quitting.
 - **F8** – exit the program.
@@ -24,7 +24,7 @@ When the application is running, an overlay appears on top of your game window. 
 
 ## Classification Labels
 
-After each shot the tool displays one of three labels along with timing information (when applicable):
+The tool displays one of three labels after each shot along with timing information (when applicable):
 
 | Label            | Description |
 |------------------|-------------|
