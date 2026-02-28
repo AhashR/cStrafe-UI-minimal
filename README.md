@@ -11,7 +11,7 @@ This is a lightweight training tool to help players practice counterstrafing mec
 
 2. Download or clone this repository.
 
-3. Run build_cStrafe.bat to download the required packages and make the executable.
+3. Run build_cStrafe.bat to download the required packages and make the executable (The executable will be placed in the folder \dist).
 
 ## Usage
 
