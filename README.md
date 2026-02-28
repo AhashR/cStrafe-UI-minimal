@@ -8,19 +8,10 @@ This is the second project in this domain. I made this so it could be more simpl
 ## Installation
 
 1. Make sure you have a recent Python installed. ( Install 3.13 from microsoft store if you get into issues)
-2. Install the required dependency:
 
-   ```bash
-   pip install pynput tkinter
-   ```
+2. Download or clone this repository
 
-   The Tkinter library (`tkinter`) is included with most standard Python installations on Windows and macOS.
-
-3. Download or clone this repository, then run the program from the project directory:
-
-   ```bash
-   python main.py
-   ```
+3. Run build_cStrafe.bat to download the required packages and make the executable.
 
 ## Usage
 
