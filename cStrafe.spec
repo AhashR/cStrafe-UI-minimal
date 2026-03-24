@@ -35,5 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['build\\app_icon_from_png.ico'],
+    icon=['C:\\Users\\Ahash\\AppData\\Local\\Temp\\cStrafe_app_icon_from_png.ico'],
 )
