@@ -23,10 +23,17 @@ IF EXIST requirements.txt (
 	exit /b 1
 )
 
+REM Build an ICO from app_icon.png so PNG is the source of truth for EXE icon
+IF NOT EXIST build mkdir build
+.venv\Scripts\python.exe -c "from PIL import Image; img=Image.open('images/app_icon.png').convert('RGBA'); img.save('build/app_icon_from_png.ico', format='ICO', sizes=[(16,16),(24,24),(32,32),(48,48),(64,64),(128,128),(256,256)])"
+IF %ERRORLEVEL% NEQ 0 (
+	echo Failed to generate build\app_icon_from_png.ico from images\app_icon.png
+	exit /b 1
+)
+
 REM Build the executable
 if exist dist\CSstrafe.exe del /f /q dist\cStrafe.exe
 
-.venv\Scripts\python.exe -m PyInstaller --onefile --windowed --hidden-import=pynput --name cStrafe --icon images/app_icon.ico --add-data "images;images" main.py
+.venv\Scripts\python.exe -m PyInstaller --onefile --windowed --hidden-import=pynput --name cStrafe --icon build/app_icon_from_png.ico --add-data "images;images" main.py
 
 echo Build complete! Check dist\cStrafe.exe
-pause

@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
-from typing import Optional, Tuple
+from typing import Optional, cast
 
 
 @dataclass
 class AxisState:
-    keys: Tuple[str, str]
+    keys: tuple[str, str]
     held_keys: set = field(default_factory=set)
     press_times: dict = field(default_factory=dict)
     cs_release_key: Optional[str] = None
@@ -38,7 +38,7 @@ class AxisState:
         self.cs_press_key = None
         self.cs_press_time = None
 
-    def classify_shot(self, shot_time: float) -> Tuple[str, Optional[float], Optional[float]]:
+    def classify_shot(self, shot_time: float) -> tuple[str, Optional[float], Optional[float]]:
         if self.overlap_start_time is not None:
             if not (
                 self.cs_press_time is not None
@@ -107,15 +107,15 @@ class MovementClassifier:
     supplied to accommodate different keyboard layouts or player preferences.
     """
 
-    def __init__(self, *, vertical_keys: Tuple[str, str] = ("W", "S"), horizontal_keys: Tuple[str, str] = ("A", "D")) -> None:
+    def __init__(self, *, vertical_keys: tuple[str, str] = ("W", "S"), horizontal_keys: tuple[str, str] = ("A", "D")) -> None:
         v_keys = tuple(key.upper() for key in vertical_keys)
         h_keys = tuple(key.upper() for key in horizontal_keys)
         if len(set(v_keys)) != 2:
             raise ValueError(f"vertical_keys must contain two distinct keys, got {vertical_keys}")
         if len(set(h_keys)) != 2:
             raise ValueError(f"horizontal_keys must contain two distinct keys, got {horizontal_keys}")
-        self.vertical = AxisState(keys=v_keys)
-        self.horizontal = AxisState(keys=h_keys)
+        self.vertical = AxisState(keys=cast(tuple[str, str], v_keys))
+        self.horizontal = AxisState(keys=cast(tuple[str, str], h_keys))
 
     def on_press(self, key: str, timestamp: float) -> None:
         if key in self.vertical.keys:

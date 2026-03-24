@@ -7,7 +7,7 @@ from classifier import ShotClassification
 class Overlay:
     def __init__(self) -> None:
         self.root = tk.Tk()
-        self.root.title("cStrafe UI by CS2Kitchen")
+        self.root.title("cStrafe by CS2Kitchen")
         self.root.overrideredirect(True)
         self.root.attributes("-topmost", True)
         self.frame = tk.Frame(self.root, bd=2, relief="solid")
@@ -17,7 +17,7 @@ class Overlay:
         self.retro_font = "Courier"
         self.header = tk.Label(
             self.frame,
-            text="cStrafe UI",
+            text="cStrafe",
             fg="white",
             bg="#303030",
             font=(self.retro_font, self.header_font_size, "bold"),
